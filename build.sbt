@@ -1,8 +1,8 @@
 lazy val commonSettings = Seq(
   version := "0.27.0",
   organization := "com.tethys-json",
-  scalaVersion := "2.12.15",
-  crossScalaVersions := Seq("2.12.15", "2.13.10"),
+  scalaVersion := "2.12.17",
+  crossScalaVersions := Seq("2.12.17", "2.13.10"),
   Compile / unmanagedSourceDirectories ++= {
     def extraDirs(suffix: String) = Seq(file(sourceDirectory.value.getPath + "/main/scala" + suffix))
 
@@ -128,7 +128,7 @@ lazy val circe = project.in(modules / "circe")
   .settings(
     name := "tethys-circe",
     libraryDependencies ++= Seq(
-      "io.circe" %% "circe-core" % "0.14.3"
+      "io.circe" %% "circe-core" % "0.14.4"
     )
   )
   .dependsOn(core, `jackson-212` % Test)
@@ -174,7 +174,7 @@ lazy val benchmarks = project.in(modules / "benchmarks")
       "io.spray"          %% "spray-json"       % "1.3.6",
       "org.json4s"        %% "json4s-native"    % "3.6.10",
       "org.json4s"        %% "json4s-jackson"   % "3.6.10",
-      "io.circe"          %% "circe-core"       % "0.14.3",
+      "io.circe"          %% "circe-core"       % "0.14.4",
       "io.circe"          %% "circe-generic"    % "0.13.0",
       "io.circe"          %% "circe-jawn"       % "0.13.0",
       "io.circe"          %% "circe-jackson210" % "0.13.0",
